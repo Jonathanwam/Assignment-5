@@ -1,0 +1,28 @@
+Assignment	5
+Due	(by	email)	before class	on	Tuesday,	March	1rd.
+Continuing	with	the	code	you	developed	for	assignment	4…
+Make	the	following	enhancements	to	your	program:
+1)		Accept	an	optional	command	line	argument.		This	argument,	if	present,	would	
+immediately	follow	the	command	name.		Its	first	character	must	be	a	dash	(“-“)	and	
+it	must	be	followed	(with	no	spaces)	by	one	or	more	decimal	digits.		The	decimal	
+integer	following	the	dash	indicates	to	your	program	how	many	lines	of	output	to	
+generate.		If	the	optional	argument	is	not	present,	then	your	program	produces	all	
+the	output	it	has.		Example:
+$ freq -20 fileA.txt fileB.txt
+Would	cause	your	program	to	print	out	20	lines	of	text	after	having	processed	the	
+two	listed	text	files.
+2)		Implement	automatic	growth	for	your	hash	table	facility.		Instrument	your	hash	
+table	so	that	it	maintains	a	metric	related	to	how	many	collisions	it	may	be	holding.		
+This	can	be	an	average	number	of	collisions	per	bucket.		Computing	the	metric	
+should	not	be	burdensome	computationally.		Following	each	insertion	into	the	hash	
+table,	your	facility	will	check	the	metric	against	a	limit	and	then	increase	the	number	
+of	buckets	in	the	table,	for	example,	by	a	factor	of	3	or	5.		Your	facilities	will	do	this	
+transparently	to	the	calling	code	and	will	free	any	heap	allocated	memory	that	is	no	
+longer	needed	(and	thus	not	leak	memory).
+3)	After	all	the	words	have	been	inserted	in	the	table	and/or	counted.	Use	your	
+table’s	function	application	method	(apply?)	to	build	a	linear	array	of	key/value	
+pairs.		Sort	the	key	value	pairs	in	descending	order	of	count	value	using	the	library	
+function	“qsort”.		Printing	of	the	key/value	pairs	will	occur	after	the	array	is	sorted.		
+The	program	will	print	the	n most	frequently	used	words	in	decreasing	order	of	
+frequency	(where	n is	the	optional	command	line	parameter,	or	if	absent,	all	the	
+words).
